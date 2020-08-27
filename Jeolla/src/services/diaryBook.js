@@ -4,7 +4,7 @@ const { getRandomString } = require('../utils/Random');
 // todo add exceptions, this code is currently not safe with exceptions.
 
 
-class DiaryService {
+class DiaryBookService {
     constructor(diary_repo) {
         this.diary_repo = diary_repo;
         this.generateCode = () => {
@@ -45,5 +45,5 @@ class DiaryService {
 
 
 module.exports = {
-    DiaryService
+    DiaryBookService
 }
