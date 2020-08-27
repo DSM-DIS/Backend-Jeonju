@@ -1,7 +1,7 @@
 const { loadDatabase } = require('./database');
 const loadExpressApp = require('./express');
 
-module.exports = (app) => {
+module.exports = async (app) => {
     await loadDatabase();
     loadExpressApp(app);
 };
