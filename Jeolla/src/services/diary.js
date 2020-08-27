@@ -1,6 +1,9 @@
 const { getRandomString } = require('../utils/Random');
 
 
+// todo add exceptions, this code is currently not safe with exceptions.
+
+
 class DiaryService {
     constructor(diary_repo) {
         this.diary_repo = diary_repo;
@@ -32,6 +35,11 @@ class DiaryService {
 
     }
 
+    async changeOwner(diary_id, new_owner) {
+        await this.diary_repo.update({owner: new_owner}, {where: {
+            id: diary_id
+        }});
+    }
 
 }
 
