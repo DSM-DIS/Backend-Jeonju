@@ -28,6 +28,7 @@ class DiaryBookService {
                     owner: leader,
                 });
                 flag = false;
+                return invite_code;
             } catch (e) {
                 console.log(e);
             }
