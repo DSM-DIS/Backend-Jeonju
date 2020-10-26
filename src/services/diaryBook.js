@@ -42,6 +42,14 @@ class DiaryBookService {
         }});
     }
 
+    async getById(diary_id) {
+        const diary_book = await this.diary_repo.findOne({where: {
+            id: diary_id
+        }});
+
+        return diary_book.dataValues;
+    }
+
 }
 
 
