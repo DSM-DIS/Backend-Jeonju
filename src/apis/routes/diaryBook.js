@@ -27,5 +27,10 @@ route.patch('/owner', async (req, res) => {
     res.send("success");
 });
 
+route.get('/:id', async (req, res) => {
+    const diary_book_id = req.params.id;
+
+    res.send(await diary_book_service.getById(diary_book_id));
+});
 
 module.exports = route;
