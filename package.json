@@ -1,10 +1,10 @@
 {
-  "name": "Jeolla",
+  "name": "Jeonju",
   "version": "1.0.0",
   "description": "diary data service",
   "main": "src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=dev mocha src/spec",
     "start": "node src/app.js"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "sequelize": "^6.3.4"
   },
   "devDependencies": {
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "mocha": "^8.1.2"
   }
