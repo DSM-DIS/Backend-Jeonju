@@ -7,7 +7,7 @@ const diary_book_service = new DiaryBookService(DiaryBook);
 
 
 route.post('/', async (req, res) => {
-    const maker = req.body.userId;
+    const maker = req.body.maker;
     const name = req.body.name;
 
     const invite_code = await diary_book_service.create(maker, name);
