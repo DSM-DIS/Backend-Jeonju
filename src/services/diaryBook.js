@@ -18,9 +18,9 @@ class DiaryBookService {
 
     async create(leader, diary_name) {
         let flag = true;
-        while(flag) {
+        //while(flag) {
             const invite_code = this.generateCode();
-            
+            console.log(leader, invite_code);
             try {
                 await this.diary_repo.create({
                     name: diary_name, 
@@ -32,7 +32,7 @@ class DiaryBookService {
             } catch (e) {
                 console.log(e);
             }
-        }
+        //}
 
     }
 
