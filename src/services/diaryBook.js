@@ -43,6 +43,7 @@ class DiaryBookService {
     }
 
     async getById(diary_id) {
+        console.log(diary_id);
         const diary_book = await this.diary_repo.findOne({where: {
             id: diary_id
         }});
