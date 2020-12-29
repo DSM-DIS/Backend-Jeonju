@@ -1,5 +1,5 @@
 const route = require('express').Router();
-
+const route_books = require('express').Router();
 
 const { DiaryBookService } = require('../../services/diaryBook');
 const { DiaryBook } = require('../../repositories');
@@ -18,7 +18,7 @@ route.post('/', async (req, res) => {
     res.json(result);
 });
 
-route.patch('/owner', async (req, res) => {
+route_books.patch('/owner', async (req, res) => {
     const diary_book_id = req.body.diary_book_id;    
     const new_owner = req.body.new_owner;
 
@@ -27,10 +27,13 @@ route.patch('/owner', async (req, res) => {
     res.send("success");
 });
 
-route.get('/:id', async (req, res) => {
+route_books.get('/:id', async (req, res) => {
     const diary_book_id = req.params.id;
 
     res.send(await diary_book_service.getById(diary_book_id));
 });
 
-module.exports = route;
+module.exports = { 
+    route,
+    route_books
+};
