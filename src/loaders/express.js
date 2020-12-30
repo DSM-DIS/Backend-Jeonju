@@ -7,7 +7,7 @@ const apis = require('../apis');
 module.exports = (app) => {
     app.use(cors());
     app.use(express.json());
-    app.use(middlewares.log_entry_res);
+    app.use('/repositories/',middlewares.log_entry_res);
 
     app.use(apis);
 };
